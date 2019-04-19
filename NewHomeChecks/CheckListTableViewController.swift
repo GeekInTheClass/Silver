@@ -81,14 +81,25 @@ class CheckListTableViewController: UITableViewController {
     }
     */
 
-    /*
+    
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        
+        if segue.identifier == "DetailSegue" {
+            guard let destination = segue.destination as? DetailViewController
+                else{
+                    return
+            }
+            guard let index = self.tableView.indexPathForSelectedRow?.row else{
+                return
+            }
+            destination.TempElement = ListOfElements[index].ElementArray[0]
+            
+        }
+        
     }
-    */
+ 
 
 }

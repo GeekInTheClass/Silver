@@ -19,13 +19,6 @@ class CheckList{
         self.ElementArray.append(TempElement)
     }
     
-    func ShowAll(){
-        print("========")
-        for SingleElement in ElementArray{
-            SingleElement.Show()
-        }
-    }
-    
     func AddElement(Type: ElementType){
         let TempElement = Element(Title: "새 항목", Type: Type)
         self.ElementArray.append(TempElement)
